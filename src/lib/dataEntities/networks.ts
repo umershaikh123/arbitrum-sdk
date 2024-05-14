@@ -156,6 +156,53 @@ export const networks: Networks = {
     isCustom: false,
     isArbitrum: false,
   },
+  17000: {
+    chainID: 17000,
+    name: 'Holesky',
+    explorerUrl: 'https://holesky.etherscan.io',
+    partnerChainIDs: [13331370],
+    blockTime: 12,
+    isCustom: false,
+    isArbitrum: false,
+},
+13331370: {
+  chainID: 13331370,
+  confirmPeriodBlocks: 20,
+  ethBridge: {
+      bridge: '0x85deaBEa8c6b45ff1f21C128b1f6Ed971bC122b3',
+      inbox: '0x4cA0aF77F59949E338bcd878B809E01d50B96D00',
+      outbox: '0x411A39A8EEC80E63F29A98882aDF17Eb4636a490',
+      rollup: '0x1f36f44a377C0D48706F0726608724d1E884D5c7',
+      sequencerInbox: '0x2813f740FF6A6c09839951855CaDfA814129B6A9',
+  },
+  explorerUrl: 'http://explorer.nexusnetwork.co.in/',
+  isArbitrum: true,
+  isCustom: true,
+  name: 'nexus-orbit-chain',
+  partnerChainID: 17000,
+  partnerChainIDs: [17000],
+  retryableLifetimeSeconds: SEVEN_DAYS_IN_SECONDS,
+  tokenBridge: {
+      l1CustomGateway: '0x2fB2f4438E58Adf2317A8E01D7A9147c35E8B17C',
+      l1ERC20Gateway: '0xf124911E6FEbB02e306594176B95Eebab6a2DB07', // standard gatway
+      l1GatewayRouter: '0x49256233ea0e7f335b0709BeE166d7A7833697f0',
+      l1MultiCall: '0xF3cA368BeF5252476E84de2A835167c90262D3C1',
+      l1ProxyAdmin: '0x1633e1BFb0F2f4A1A13Cde3B815C8009d54B070c', // only l2 given
+      l1Weth: '0x9E2433a112E8011FCA089eD97941dCb1bE913e48',
+      l1WethGateway: '0x223395709C1299457374B8b54e911039fb896c38',
+      l2CustomGateway: '0xeD558B2d34be97df05b63DbA53F19C5aD64bEFbB',
+      l2ERC20Gateway: '0x7fFf8201D972BDCD8A0567842253919360481BD7', // standard
+      l2GatewayRouter: '0x5Ce08541F5D77753b10af23c6ac1e416792d6617',
+      l2Multicall: '0x38Ba7826Ef36bC41A964cAc620af0D396B47b84a',
+      l2ProxyAdmin: '0x872DF1b8Fe95652335d919bbD6716E972dE143A2',
+      l2Weth: '0x50104764A914Aa3a080a42d0D2E6E19E26312A2F',
+      l2WethGateway: '0xEB3dAf274301fbBD120151BdfD99404b616d8E9A'
+    },
+  nitroGenesisBlock: 0,
+  nitroGenesisL1Block: 0,
+  depositTimeout: 1800000,
+  blockTime: ARB_MINIMUM_BLOCK_TIME_IN_SECONDS,
+},
   1338: {
     chainID: 1338,
     name: 'Hardhat_Mainnet_Fork',
@@ -174,15 +221,7 @@ export const networks: Networks = {
     isCustom: false,
     isArbitrum: false,
   },
-  17000: {
-    chainID: 17000,
-    name: 'Holesky',
-    explorerUrl: 'https://holesky.etherscan.io',
-    partnerChainIDs: [],
-    blockTime: 12,
-    isCustom: false,
-    isArbitrum: false,
-  },
+ 
   42161: {
     chainID: 42161,
     name: 'Arbitrum One',
@@ -363,6 +402,7 @@ export const networks: Networks = {
     blockTime: ARB_MINIMUM_BLOCK_TIME_IN_SECONDS,
   },
 }
+
 
 /**
  * Determines if a chain is a parent of *any* other chain. Could be an L1 or an L2 chain.

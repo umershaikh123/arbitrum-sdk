@@ -1,7 +1,7 @@
 {
-  "name": "@arbitrum/sdk",
-  "version": "3.4.1",
-  "description": "Typescript library client-side interactions with Arbitrum",
+  "name": "nexus-arbitrum-sdk",
+  "version": "1.0.0",
+  "description": "Typescript library client-side interactions with Arbitrum with nexus orbit chain support",
   "author": "Offchain Labs, Inc.",
   "license": "Apache-2.0",
   "main": "dist/index.js",
@@ -24,9 +24,9 @@
     "prepare": "yarn run gen:abi",
     "gen:abi": "node ./scripts/genAbi.js",
     "gen:network": "ts-node ./scripts/genNetwork.ts",
-    "prepublishOnly": "yarn build && yarn format",
+    "prepublishOnly": "yarn build",
     "preversion": "yarn lint",
-    "build": "./scripts/builder",
+    "build": "tsc",
     "watch": "tsc --watch",
     "test": "mocha",
     "test:coverage": "nyc mocha",
@@ -94,5 +94,8 @@
   ],
   "resolutions": {
     "lodash.pick": "https://github.com/lodash/lodash/archive/refs/tags/4.17.21.tar.gz"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

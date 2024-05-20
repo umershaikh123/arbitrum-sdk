@@ -1,0 +1,26 @@
+Error: processing response error (body="{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32701,\"message\":\"exceed maximum block range: 50000\"},\"id\":44}\n", error={"code":-32701}, requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x2813f740ff6a6c09839951855cadfa814129b6a9\",\"topics\":[\"0x7394f4a19a13c7b92b5bb71033245305946ef78452f7b4986ac1390b5df4ebd7\",\"0x0000000000000000000000000000000000000000000000000000000000000015\"]}],\"id\":44,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://ethereum-holesky-rpc.publicnode.com", code=SERVER_ERROR, version=web/5.7.1)
+    at Logger.makeError (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\logger\src.ts\index.ts:269:28)
+    at Logger.throwError (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\logger\src.ts\index.ts:281:20)
+    at F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\src.ts\index.ts:341:28
+    at step (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:33:23)
+    at Object.next (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:14:53)
+    at fulfilled (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  reason: 'processing response error',
+  code: 'SERVER_ERROR',
+  body: '{"jsonrpc":"2.0","error":{"code":-32701,"message":"exceed maximum block range: 50000"},"id":44}\n',
+  error: Error: exceed maximum block range: 50000
+      at getResult (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\src.ts\json-rpc-provider.ts:142:28)
+      at processJsonFunc (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\src.ts\index.ts:383:22)
+      at F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\src.ts\index.ts:320:42
+      at step (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:33:23)
+      at Object.next (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:14:53)
+      at fulfilled (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\web\lib\index.js:5:58)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: -32701,
+    data: undefined
+  },
+  requestBody: '{"method":"eth_getLogs","params":[{"fromBlock":"0x0","toBlock":"latest","address":"0x2813f740ff6a6c09839951855cadfa814129b6a9","topics":["0x7394f4a19a13c7b92b5bb71033245305946ef78452f7b4986ac1390b5df4ebd7","0x0000000000000000000000000000000000000000000000000000000000000015"]}],"id":44,"jsonrpc":"2.0"}',
+  requestMethod: 'POST',
+  url: 'https://ethereum-holesky-rpc.publicnode.com'
+}

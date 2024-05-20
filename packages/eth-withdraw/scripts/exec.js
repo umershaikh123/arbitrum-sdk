@@ -19,7 +19,7 @@ const l2Wallet = new Wallet(walletPrivateKey, l2Provider)
 /**
  * Set the amount to be withdrawn from L2 (in wei)
  */
-const ethFromL2WithdrawAmount = parseEther('0.000001')
+const ethFromL2WithdrawAmount = parseEther('0.005')
 
 const main = async () => {
   await arbLog('Withdraw Eth via Arbitrum SDK')
@@ -61,8 +61,11 @@ const main = async () => {
     l2Signer: l2Wallet,
     destinationAddress: l2Wallet.address,
   })
-  const withdrawRec = await withdrawTx.wait()
+  console.log("withdrawTx \n" , withdrawTx);
+ 
 
+  const withdrawRec = await withdrawTx.wait()
+  console.log("withdrawRec \n" , withdrawRec);
   /**
    * And with that, our withdrawal is initiated! No additional time-sensitive actions are required.
    * Any time after the transaction's assertion is confirmed, funds can be transferred out of the bridge via the outbox contract

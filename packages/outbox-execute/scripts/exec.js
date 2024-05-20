@@ -49,6 +49,7 @@ module.exports = async txnHash => {
    */
   const messages = await l2Receipt.getL2ToL1Messages(l1Wallet)
   const l2ToL1Msg = messages[0]
+  console.log("l2ToL1Msg", l2ToL1Msg) ;
 
   /**
    * Check if already executed
@@ -62,17 +63,23 @@ module.exports = async txnHash => {
    * before we try to execute out message, we need to make sure the l2 block it's included in is confirmed! (It can only be confirmed after the dispute period; Arbitrum is an optimistic rollup after-all)
    * waitUntilReadyToExecute() waits until the item outbox entry exists
    */
-  const timeToWaitMs = 1000 * 60
+  const timeToWaitMs = 1
   console.log(
     "Waiting for the outbox entry to be created. This only happens when the L2 block is confirmed on L1, ~1 week after it's creation."
   )
+
+ 
+  console.log("l2ToL1Msg.status(l2Provider) 1 " , await l2ToL1Msg.status(l2Provider));
+ 
   await l2ToL1Msg.waitUntilReadyToExecute(l2Provider, timeToWaitMs)
   console.log('Outbox entry exists! Trying to execute now')
-
+  console.log("l2ToL1Msg.status(l2Provider) 2 " , await l2ToL1Msg.status(l2Provider));
   /**
    * Now that its confirmed and not executed, we can execute our message in its outbox entry.
    */
   const res = await l2ToL1Msg.execute(l2Provider)
+  console.log("l2ToL1Msg.status(l2Provider) 3 " , await l2ToL1Msg.status(l2Provider));
   const rec = await res.wait()
+  console.log("l2ToL1Msg.status(l2Provider) 4 " , await l2ToL1Msg.status(l2Provider));
   console.log('Done! Your transaction is executed', rec)
 }

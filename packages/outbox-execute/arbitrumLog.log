@@ -1,0 +1,194 @@
+Arbitrum Demo: Outbox Execution
+Lets
+Go ➡️
+...🚀
+
+l2ToL1Msg L2ToL1MessageWriter {
+  l1Provider: JsonRpcProvider {
+    _isProvider: true,
+    _events: [],
+    _emitted: { block: -2 },
+    disableCcipRead: false,
+    formatter: Formatter { formats: [Object] },
+    anyNetwork: false,
+    _networkPromise: Promise { [Object] },
+    _maxInternalBlockNumber: -1024,
+    _lastBlockNumber: -2,
+    _maxFilterBlockRange: 10,
+    _pollingInterval: 4000,
+    _fastQueryDate: 0,
+    connection: {
+      url: 'https://sepolia.infura.io/v3/fffc0af392524e46b05ebe5666152690'
+    },
+    _nextId: 43,
+    _eventLoopCache: { detectNetwork: null, eth_chainId: null },
+    _network: {
+      name: 'sepolia',
+      chainId: 11155111,
+      ensAddress: null,
+      _defaultProvider: [Function]
+    }
+  },
+  nitroReader: L2ToL1MessageReaderNitro {
+    event: [
+      '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      '0x',
+      caller: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      destination: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      hash: [BigNumber],
+      position: [BigNumber],
+      arbBlockNum: [BigNumber],
+      ethBlockNum: [BigNumber],
+      timestamp: [BigNumber],
+      callvalue: [BigNumber],
+      data: '0x'
+    ],
+    l1Provider: JsonRpcProvider {
+      _isProvider: true,
+      _events: [],
+      _emitted: [Object],
+      disableCcipRead: false,
+      formatter: [Formatter],
+      anyNetwork: false,
+      _networkPromise: [Promise],
+      _maxInternalBlockNumber: -1024,
+      _lastBlockNumber: -2,
+      _maxFilterBlockRange: 10,
+      _pollingInterval: 4000,
+      _fastQueryDate: 0,
+      connection: [Object],
+      _nextId: 43,
+      _eventLoopCache: [Object],
+      _network: [Object]
+    }
+  },
+  nitroWriter: L2ToL1MessageWriterNitro {
+    event: [
+      '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      [BigNumber],
+      '0x',
+      caller: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      destination: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      hash: [BigNumber],
+      position: [BigNumber],
+      arbBlockNum: [BigNumber],
+      ethBlockNum: [BigNumber],
+      timestamp: [BigNumber],
+      callvalue: [BigNumber],
+      data: '0x'
+    ],
+    l1Provider: JsonRpcProvider {
+      _isProvider: true,
+      _events: [],
+      _emitted: [Object],
+      disableCcipRead: false,
+      formatter: [Formatter],
+      anyNetwork: false,
+      _networkPromise: [Promise],
+      _maxInternalBlockNumber: -1024,
+      _lastBlockNumber: -2,
+      _maxFilterBlockRange: 10,
+      _pollingInterval: 4000,
+      _fastQueryDate: 0,
+      connection: [Object],
+      _nextId: 43,
+      _eventLoopCache: [Object],
+      _network: [Object]
+    },
+    l1Signer: Wallet {
+      _isSigner: true,
+      _signingKey: [Function (anonymous)],
+      _mnemonic: [Function (anonymous)],
+      address: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+      provider: [JsonRpcProvider]
+    }
+  }
+}
+Waiting for the outbox entry to be created. This only happens when the L2 block is confirmed on L1, ~1 week after it's creation.
+Outbox entry exists! Trying to execute now
+Done! Your transaction is executed {
+  to: '0x65f07C7D521164a4d5DaC6eB8Fac8DA067A3B78F',
+  from: '0x8a770B7700f941Bb2E6Dd023AD3B22c2c41C5901',
+  contractAddress: null,
+  transactionIndex: 19,
+  gasUsed: BigNumber { _hex: '0x01aaee', _isBigNumber: true },
+  logsBloom: '0x00000000000000000000000000000000000010000000000000000000000000002000000004040000000000000000000010000000000000000000000800000000000000000000000000000000000000000000000080800000000000000000000000000000020000000000000000000800000000000000000000000000000000000000000000040000000000400000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000800020008000000004000000000020000000000000000000000000000040000000000000',
+  blockHash: '0xde79fba98e3107df46f4641eadfeb7ebd3f8c0454f65cb0503e4c93553636125',
+  transactionHash: '0x87a07cfa87eca22841d09e063c3f60030121d15b14e349382ab6cf5b301b3318',
+  logs: [
+    {
+      transactionIndex: 19,
+      blockNumber: 5920741,
+      transactionHash: '0x87a07cfa87eca22841d09e063c3f60030121d15b14e349382ab6cf5b301b3318',
+      address: '0x65f07C7D521164a4d5DaC6eB8Fac8DA067A3B78F',
+      topics: [Array],
+      data: '0x0000000000000000000000000000000000000000000000000000000000009a79',
+      logIndex: 19,
+      blockHash: '0xde79fba98e3107df46f4641eadfeb7ebd3f8c0454f65cb0503e4c93553636125'
+    },
+    {
+      transactionIndex: 19,
+      blockNumber: 5920741,
+      transactionHash: '0x87a07cfa87eca22841d09e063c3f60030121d15b14e349382ab6cf5b301b3318',
+      address: '0x38f918D0E9F1b721EDaA41302E399fa1B79333a9',
+      topics: [Array],
+      data: '0x00000000000000000000000000000000000000000000000000003691d6afc00000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000',
+      logIndex: 20,
+      blockHash: '0xde79fba98e3107df46f4641eadfeb7ebd3f8c0454f65cb0503e4c93553636125'
+    }
+  ],
+  blockNumber: 5920741,
+  confirmations: 1,
+  cumulativeGasUsed: BigNumber { _hex: '0x158c05', _isBigNumber: true },
+  effectiveGasPrice: BigNumber { _hex: '0x1820e41ca0', _isBigNumber: true },
+  status: 1,
+  type: 2,
+  byzantium: true,
+  events: [
+    {
+      transactionIndex: 19,
+      blockNumber: 5920741,
+      transactionHash: '0x87a07cfa87eca22841d09e063c3f60030121d15b14e349382ab6cf5b301b3318',
+      address: '0x65f07C7D521164a4d5DaC6eB8Fac8DA067A3B78F',
+      topics: [Array],
+      data: '0x0000000000000000000000000000000000000000000000000000000000009a79',
+      logIndex: 19,
+      blockHash: '0xde79fba98e3107df46f4641eadfeb7ebd3f8c0454f65cb0503e4c93553636125',
+      args: [Array],
+      decode: [Function (anonymous)],
+      event: 'OutBoxTransactionExecuted',
+      eventSignature: 'OutBoxTransactionExecuted(address,address,uint256,uint256)',
+      removeListener: [Function (anonymous)],
+      getBlock: [Function (anonymous)],
+      getTransaction: [Function (anonymous)],
+      getTransactionReceipt: [Function (anonymous)]
+    },
+    {
+      transactionIndex: 19,
+      blockNumber: 5920741,
+      transactionHash: '0x87a07cfa87eca22841d09e063c3f60030121d15b14e349382ab6cf5b301b3318',
+      address: '0x38f918D0E9F1b721EDaA41302E399fa1B79333a9',
+      topics: [Array],
+      data: '0x00000000000000000000000000000000000000000000000000003691d6afc00000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000',
+      logIndex: 20,
+      blockHash: '0xde79fba98e3107df46f4641eadfeb7ebd3f8c0454f65cb0503e4c93553636125',
+      removeListener: [Function (anonymous)],
+      getBlock: [Function (anonymous)],
+      getTransaction: [Function (anonymous)],
+      getTransactionReceipt: [Function (anonymous)]
+    }
+  ]
+}

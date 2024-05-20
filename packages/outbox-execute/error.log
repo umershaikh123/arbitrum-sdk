@@ -1,0 +1,45 @@
+index.js:224 Uncaught (in promise) Error: missing response (requestBody="{\"method\":\"eth_blockNumber\",\"params\":[],\"id\":44,\"jsonrpc\":\"2.0\"}", requestMethod="POST", serverError={}, url="https://rpc.nexusnetwork.co.in", code=SERVER_ERROR, version=web/5.7.1)
+    at Logger.makeError (index.js:224:1)
+    at Logger.throwError (index.js:233:1)
+    at j (index.js:217:1)
+    at j.throw (<anonymous>)
+    at rejected (index.js:6:42)
+await in rejected (async)		
+(anonymous)	@	MainContent.tsx:34
+
+
+
+
+
+An unexpected error occurred:
+
+Error: bad result from backend (method="call", params={"transaction":{"to":"0x1f36f44a377C0D48706F0726608724d1E884D5c7","data":"0x92c8134c000000000000000000000000000000000000000000000000000000000000000a","accessList":null},"blockTag":"latest"}, result=null, error={}, code=SERVER_ERROR, version=providers/5.7.2)
+    at Logger.makeError (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\logger\src.ts\index.ts:269:28)
+    at Logger.throwError (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\logger\src.ts\index.ts:281:20)
+    at JsonRpcProvider.<anonymous> (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\src.ts\base-provider.ts:1714:27)
+    at step (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:48:23)
+    at Object.next (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:29:53)
+    at fulfilled (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:20:58)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  reason: 'bad result from backend',
+  code: 'SERVER_ERROR',
+  method: 'call',
+  params: {
+    transaction: {
+      to: '0x1f36f44a377C0D48706F0726608724d1E884D5c7',
+      data: '0x92c8134c000000000000000000000000000000000000000000000000000000000000000a',
+      accessList: null
+    },
+    blockTag: 'latest'
+  },
+  result: null,
+  error: TypeError: Cannot read properties of null (reading 'toHexString')
+      at isHexable (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\bytes\src.ts\index.ts:58:21)
+      at hexlify (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\bytes\src.ts\index.ts:228:9)
+      at JsonRpcProvider.<anonymous> (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\src.ts\base-provider.ts:1712:27)
+      at step (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:48:23)
+      at Object.next (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:29:53)
+      at fulfilled (F:\Code\arbitrum\arbitrum-tutorials\node_modules\@ethersproject\providers\lib\base-provider.js:20:58)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+}
+error Command failed with exit code 1.
